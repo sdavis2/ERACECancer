@@ -59,7 +59,11 @@ public class datequestions extends Activity {
         int ans = SurveyStore.get(getApplicationContext()).getAnswer(mQnum);
         if((ans != 0) && (ans != 1) && (ans != 2)){
             String d = String.valueOf(ans);
-            pdateButton.setText(d);
+            String month = d.substring(0,2);
+            String day = d.substring(2,4);
+            String year = d.substring(4);
+            String date = month+"/"+day+"/"+year;
+            pdateButton.setText(date);
         }
         pdateButton.setText("MM/DD/YYYY");
         mNextButton = (Button) findViewById(R.id.nextbutton);

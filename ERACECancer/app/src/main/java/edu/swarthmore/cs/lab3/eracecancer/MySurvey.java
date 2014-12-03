@@ -20,6 +20,7 @@ public class MySurvey extends Activity {
     private static final String TAG = "MySurvey";
     private Button mViewList;
     private Button mViewSurvey;
+    private Button mReset;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -91,6 +92,7 @@ public class MySurvey extends Activity {
         setContentView(R.layout.activity_my_survey);
         mViewList = (Button) findViewById(R.id.list);
         mViewSurvey = (Button) findViewById(R.id.survey);
+        mReset = (Button) findViewById(R.id.reset);
 
         mViewList.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -105,6 +107,12 @@ public class MySurvey extends Activity {
                 Intent i = new Intent(MySurvey.this, sexquestion.class);
                 i.putExtra(sexquestion.EXTRA_QNUM, 0);
                 startActivityForResult(i, 0);
+            }
+        });
+        mReset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SurveyStore.get(getApplicationContext()).clearSurveyAnswers();
             }
         });
     }

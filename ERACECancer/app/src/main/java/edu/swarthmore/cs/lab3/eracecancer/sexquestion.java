@@ -113,6 +113,15 @@ public class sexquestion extends Activity {
                     if (mQnum == 0) {
                         Log.d(TAG, "about to set answer to" + String.valueOf(2));
                         SurveyStore.get(getApplicationContext()).setSurveyAnswers(0, 2);
+                        if(SurveyStore.get(getApplicationContext()).getAnswer(5) == 5){
+                            SurveyStore.get(getApplicationContext()).setSurveyAnswers(5, 0);
+                        }
+                        if(SurveyStore.get(getApplicationContext()).getAnswer(6) == 5){
+                            SurveyStore.get(getApplicationContext()).setSurveyAnswers(6, 0);
+                        }
+                        if(SurveyStore.get(getApplicationContext()).getAnswer(7) == 5){
+                            SurveyStore.get(getApplicationContext()).setSurveyAnswers(7, 0);
+                        }
                         Intent i = new Intent();
                         i.putExtra("GENDER", 2);
                         setResult(0, i);

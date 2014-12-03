@@ -23,6 +23,7 @@
        android:layout_height="wrap_content"
        android:layout_marginLeft="140dp"
        android:layout_marginRight="140dp"
+       android:layout_gravity="center"
        android:id="@+id/unsureButton"
        android:text="@string/unsure"/>
     <Button
@@ -30,6 +31,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="140dp"
         android:layout_marginRight="140dp"
+        android:layout_gravity="center"
         android:id="@+id/neverButton"
         android:text="@string/never"/>
 
@@ -40,11 +42,9 @@
         android:gravity="center|bottom">
 
         <Button
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            android:layout_marginLeft="140dp"
-            android:layout_marginRight="140dp"
+            android:layout_gravity="bottom|center"
             android:layout_marginBottom="24dp"
             android:id="@+id/nextbutton"
             android:text="@string/next"/>

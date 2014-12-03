@@ -13,7 +13,7 @@ public class SurveyStore {
     private Context mAppContext;
     private ArrayList <SurveyAnswer> mSurveyAnswers;
     private SurveyAnswerIntentJSONSerializer mSerializer;
-    private static final String FILENAME = "survey_results.json";
+    private static final String FILENAME = "survey.json";
     private static final String TAG = "SurveyStore";
     int[] mQuestions = new int[] {
       R.string.sexQ,
@@ -101,8 +101,10 @@ public class SurveyStore {
         }
     }
 
-    public boolean clearSurveyAnswers() {
-
+    public void clearSurveyAnswers() {
+        for (SurveyAnswer s : mSurveyAnswers){
+            s.setAnswer(0);
+        }
     }
 
     public boolean saveSurveyAnswers() {
